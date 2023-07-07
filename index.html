@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue JS</title>
+</head>
+<body>
+    
+      <div id="app">
+        {{ count }}
+        <button @click="count++" v-bind="objectOfAttrs">click me</button>
+      </div>
+      
+
+      <script type="importmap">
+        {
+          "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+          }
+        }
+      </script>
+      <script type="module">
+        import { createApp } from 'vue'
+      
+        createApp({
+          data() {
+            return {
+              message: 'Hello Vue!',
+              objectOfAttrs: {
+                id: 'container',
+                class: 'wrapper',
+                }
+            }
+          }
+        }).mount('#app')
+      </script>
+</body>
+</html>
